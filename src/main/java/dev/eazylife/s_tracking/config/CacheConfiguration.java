@@ -38,6 +38,11 @@ public class CacheConfiguration {
             cm.createCache(dev.eazylife.s_tracking.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(dev.eazylife.s_tracking.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(dev.eazylife.s_tracking.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(dev.eazylife.s_tracking.domain.Clients.class.getName(), jcacheConfiguration);
+            cm.createCache(dev.eazylife.s_tracking.domain.Devices.class.getName(), jcacheConfiguration);
+            cm.createCache(dev.eazylife.s_tracking.domain.Voitures.class.getName(), jcacheConfiguration);
+            cm.createCache(dev.eazylife.s_tracking.domain.Historiques.class.getName(), jcacheConfiguration);
+            cm.createCache(dev.eazylife.s_tracking.domain.Clients.class.getName() + ".devices", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

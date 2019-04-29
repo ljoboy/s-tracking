@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="voitures">
+            <h2><span jhiTranslate="sTrackingApp.voitures.detail.title">Voitures</span> {{voitures.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sTrackingApp.voitures.plaque">Plaque</span></dt>
+                <dd>
+                    <span>{{voitures.plaque}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.voitures.marque">Marque</span></dt>
+                <dd>
+                    <span>{{voitures.marque}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.voitures.couleur">Couleur</span></dt>
+                <dd>
+                    <span>{{voitures.couleur}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.voitures.devices">Devices</span></dt>
+                <dd>
+                    <div *ngIf="voitures.devices">
+                        <a [routerLink]="['/devices', voitures.devices?.id, 'view']">{{voitures.devices?.numeroSim}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/voitures', voitures.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

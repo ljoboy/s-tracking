@@ -1,0 +1,24 @@
+
+{
+    "sTrackingApp": {
+        "devices" : {
+            "home": {
+                "title": "Devices",
+                "createLabel": "Créer un nouveau Devices",
+                "createOrEditLabel": "Créer ou éditer un Devices"
+            },
+            "created": "Un nouveau Devices a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Devices avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Devices avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Devices {{ id }} ?"
+            },
+            "detail": {
+                "title": "Devices"
+            },
+            "imei": "Imei",
+            "numeroSim": "Numero Sim",
+            "clients": "Clients"
+        }
+    }
+}

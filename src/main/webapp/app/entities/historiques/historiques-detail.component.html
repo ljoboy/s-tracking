@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="historiques">
+            <h2><span jhiTranslate="sTrackingApp.historiques.detail.title">Historiques</span> {{historiques.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sTrackingApp.historiques.dateHistorique">Date Historique</span></dt>
+                <dd>
+                    <span>{{historiques.dateHistorique}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.historiques.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{historiques.longitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.historiques.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{historiques.latitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.historiques.devices">Devices</span></dt>
+                <dd>
+                    <div *ngIf="historiques.devices">
+                        <a [routerLink]="['/devices', historiques.devices?.id, 'view']">{{historiques.devices?.numeroSim}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/historiques', historiques.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

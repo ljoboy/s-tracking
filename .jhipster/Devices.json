@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "clients",
+            "otherEntityName": "clients",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nom"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imei",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroSim",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20190429095622",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "devices",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

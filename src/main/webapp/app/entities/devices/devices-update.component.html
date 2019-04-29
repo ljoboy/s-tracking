@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-devices-heading" jhiTranslate="sTrackingApp.devices.home.createOrEditLabel">Create or edit a Devices</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!devices.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="devices.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.devices.imei" for="field_imei">Imei</label>
+                    <input type="number" class="form-control" name="imei" id="field_imei"
+                        [(ngModel)]="devices.imei" required/>
+                    <div [hidden]="!(editForm.controls.imei?.dirty && editForm.controls.imei?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imei?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.imei?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.devices.numeroSim" for="field_numeroSim">Numero Sim</label>
+                    <input type="number" class="form-control" name="numeroSim" id="field_numeroSim"
+                        [(ngModel)]="devices.numeroSim" required/>
+                    <div [hidden]="!(editForm.controls.numeroSim?.dirty && editForm.controls.numeroSim?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numeroSim?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.numeroSim?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.devices.clients" for="field_clients">Clients</label>
+                    <select class="form-control" id="field_clients" name="clients" [(ngModel)]="devices.clients" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientsOption.id === devices.clients?.id ? devices.clients : clientsOption" *ngFor="let clientsOption of clients; trackBy: trackClientsById">{{clientsOption.nom}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

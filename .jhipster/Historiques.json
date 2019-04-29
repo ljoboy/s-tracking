@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "devices",
+            "otherEntityName": "devices",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "numeroSim"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateHistorique",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20190429100625",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "historiques",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

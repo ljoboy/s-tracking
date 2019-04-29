@@ -1,0 +1,25 @@
+
+{
+    "sTrackingApp": {
+        "voitures" : {
+            "home": {
+                "title": "Voitures",
+                "createLabel": "Create a new Voitures",
+                "createOrEditLabel": "Create or edit a Voitures"
+            },
+            "created": "A new Voitures is created with identifier {{ param }}",
+            "updated": "A Voitures is updated with identifier {{ param }}",
+            "deleted": "A Voitures is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Voitures {{ id }}?"
+            },
+            "detail": {
+                "title": "Voitures"
+            },
+            "plaque": "Plaque",
+            "marque": "Marque",
+            "couleur": "Couleur",
+            "devices": "Devices"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+{
+    "sTrackingApp": {
+        "historiques" : {
+            "home": {
+                "title": "Historiques",
+                "createLabel": "Créer un nouveau Historiques",
+                "createOrEditLabel": "Créer ou éditer un Historiques"
+            },
+            "created": "Un nouveau Historiques a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Historiques avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Historiques avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Historiques {{ id }} ?"
+            },
+            "detail": {
+                "title": "Historiques"
+            },
+            "dateHistorique": "Date Historique",
+            "longitude": "Longitude",
+            "latitude": "Latitude",
+            "devices": "Devices"
+        }
+    }
+}

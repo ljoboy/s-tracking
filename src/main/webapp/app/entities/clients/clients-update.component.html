@@ -1,0 +1,136 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-clients-heading" jhiTranslate="sTrackingApp.clients.home.createOrEditLabel">Create or edit a Clients</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!clients.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="clients.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="clients.nom" required minlength="3"/>
+                    <div [hidden]="!(editForm.controls.nom?.dirty && editForm.controls.nom?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nom?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nom?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.dateAbonnement" for="field_dateAbonnement">Date Abonnement</label>
+                    <div class="d-flex">
+                        <input id="field_dateAbonnement" type="datetime-local" class="form-control" name="dateAbonnement" [(ngModel)]="dateAbonnement"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.province" for="field_province">Province</label>
+                    <input type="text" class="form-control" name="province" id="field_province"
+                        [(ngModel)]="clients.province" minlength="3"/>
+                    <div [hidden]="!(editForm.controls.province?.dirty && editForm.controls.province?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.province?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.ville" for="field_ville">Ville</label>
+                    <input type="text" class="form-control" name="ville" id="field_ville"
+                        [(ngModel)]="clients.ville" minlength="3"/>
+                    <div [hidden]="!(editForm.controls.ville?.dirty && editForm.controls.ville?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ville?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                        [(ngModel)]="clients.adresse" minlength="3"/>
+                    <div [hidden]="!(editForm.controls.adresse?.dirty && editForm.controls.adresse?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.adresse?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.password" for="field_password">Password</label>
+                    <input type="text" class="form-control" name="password" id="field_password"
+                        [(ngModel)]="clients.password" required minlength="6"/>
+                    <div [hidden]="!(editForm.controls.password?.dirty && editForm.controls.password?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.password?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.password?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 6 }">
+                        This field is required to be at least 6 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.types" for="field_types">Types</label>
+                    <select class="form-control" name="types" [(ngModel)]="clients.types" id="field_types" >
+                        <option value="PARTICULIER">{{'sTrackingApp.Types.PARTICULIER' | translate}}</option>
+                        <option value="ENTREPRISE">{{'sTrackingApp.Types.ENTREPRISE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.telephone" for="field_telephone">Telephone</label>
+                    <input type="number" class="form-control" name="telephone" id="field_telephone"
+                        [(ngModel)]="clients.telephone" required/>
+                    <div [hidden]="!(editForm.controls.telephone?.dirty && editForm.controls.telephone?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.telephone?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.telephone?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="clients.email" required pattern="^\S+@\S+$"/>
+                    <div [hidden]="!(editForm.controls.email?.dirty && editForm.controls.email?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.email?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.email?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'Email' }">
+                            This field should follow pattern for "Email".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sTrackingApp.clients.rccm" for="field_rccm">Rccm</label>
+                    <input type="text" class="form-control" name="rccm" id="field_rccm"
+                        [(ngModel)]="clients.rccm" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

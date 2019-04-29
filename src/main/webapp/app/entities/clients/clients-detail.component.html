@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="clients">
+            <h2><span jhiTranslate="sTrackingApp.clients.detail.title">Clients</span> {{clients.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sTrackingApp.clients.nom">Nom</span></dt>
+                <dd>
+                    <span>{{clients.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.dateAbonnement">Date Abonnement</span></dt>
+                <dd>
+                    <span>{{clients.dateAbonnement}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.province">Province</span></dt>
+                <dd>
+                    <span>{{clients.province}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.ville">Ville</span></dt>
+                <dd>
+                    <span>{{clients.ville}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{clients.adresse}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.password">Password</span></dt>
+                <dd>
+                    <span>{{clients.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.types">Types</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'sTrackingApp.Types.' + clients.types}}">{{clients.types}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{clients.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.email">Email</span></dt>
+                <dd>
+                    <span>{{clients.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="sTrackingApp.clients.rccm">Rccm</span></dt>
+                <dd>
+                    <span>{{clients.rccm}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/clients', clients.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

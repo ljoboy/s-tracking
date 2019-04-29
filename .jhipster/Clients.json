@@ -1,0 +1,85 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "3"
+        },
+        {
+            "fieldName": "dateAbonnement",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "province",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "3"
+        },
+        {
+            "fieldName": "ville",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "3"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "3"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "6"
+        },
+        {
+            "fieldName": "types",
+            "fieldType": "Types",
+            "fieldValues": "PARTICULIER,ENTREPRISE"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^\\S+@\\S+$"
+        },
+        {
+            "fieldName": "rccm",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190429095128",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "clients",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

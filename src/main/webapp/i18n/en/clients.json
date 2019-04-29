@@ -1,0 +1,31 @@
+
+{
+    "sTrackingApp": {
+        "clients" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "Create a new Clients",
+                "createOrEditLabel": "Create or edit a Clients"
+            },
+            "created": "A new Clients is created with identifier {{ param }}",
+            "updated": "A Clients is updated with identifier {{ param }}",
+            "deleted": "A Clients is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Clients {{ id }}?"
+            },
+            "detail": {
+                "title": "Clients"
+            },
+            "nom": "Nom",
+            "dateAbonnement": "Date Abonnement",
+            "province": "Province",
+            "ville": "Ville",
+            "adresse": "Adresse",
+            "password": "Password",
+            "types": "Types",
+            "telephone": "Telephone",
+            "email": "Email",
+            "rccm": "Rccm"
+        }
+    }
+}

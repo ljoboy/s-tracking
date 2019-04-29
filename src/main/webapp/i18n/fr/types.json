@@ -1,0 +1,9 @@
+{
+    "sTrackingApp": {
+        "Types" : {
+            "null": "",
+            "PARTICULIER": "PARTICULIER",
+            "ENTREPRISE": "ENTREPRISE"
+        }
+    }
+}
